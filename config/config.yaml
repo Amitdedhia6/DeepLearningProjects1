@@ -1,0 +1,41 @@
+###################################################
+# Detection model (TK uncomment this, and comment the 'Classification model' section)
+###################################################
+
+# Dataset
+dataset:
+  reader: yolov4
+  train_path: data/coco2017_detection/train.txt
+  valid_path: data/coco2017_detection/valid.txt
+  n_classes: 5
+
+# Model
+model:
+  type: detection
+  name: yolov3
+  criterion: yolov3_loss
+
+###################################################
+# Classification model
+###################################################
+#dataset:
+#  reader: image_folder
+#  train_path: data/helmet_classification/train
+#  val_path: data/helmet_classification/val
+#  n_classes: 2
+#
+#model:
+#  type: classification
+#  name: darknet53 # (AMIT) Change this to efficientnetb0
+#  criterion: cross_entropy
+
+###################################################
+# Training
+###################################################
+
+learning_algorithm: 'SGD'  # 'SGD', 'Adam'
+epochs: 800
+batch_size: 4
+lr: 1.e-3
+momentum: 0.9
+weight_decay: 5.e-4
